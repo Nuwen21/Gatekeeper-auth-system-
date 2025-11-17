@@ -1,0 +1,178 @@
+/* --- Global Styles & Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* ensure children stack vertically */
+    gap: 2rem; /* space between stacked login containers */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+    /* --- The Animated Background --- */
+    background: linear-gradient(-45deg, #0a032c, #1a0b4d, #3c1a7d, #0e043b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* --- Keyframe Animation for Background --- */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* --- The "Glassmorphism" Login Box --- */
+.login-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 2.5rem;
+    
+    /* Glass Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- Input Fields --- */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+/* --- Futuristic Focus Effect --- */
+.input-group input:focus {
+    outline: none;
+    border-color: #00ffff; /* Neon cyan */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* --- Login Button --- */
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ffff; /* Neon cyan */
+    color: #1a0b4d; /* Dark text for contrast */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.login-button:hover {
+    background-color: #00cccc;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* --- Bottom Links --- */
+.links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.links a {
+    color: #00ffff; /* Neon cyan */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+/* --- Logout Button Style (used on dashboard.html) --- */
+.logout-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff2a6d; /* A futuristic "danger" pink/red */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #d9004a;
+    box-shadow: 0 0 15px rgba(255, 42, 109, 0.7);
+}
+
+/* --- Add this to the end of style.css --- */
+
+/* Styles for the review content section */
+.review-content {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.review-content h3 {
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+}
+
+/* Styles for the new form */
+#profile-form {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+/* Make disabled inputs look right */
+input:disabled {
+    background: rgba(0, 0, 0, 0.3);
+    color: #aaa;
+    cursor: not-allowed;
+}

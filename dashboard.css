@@ -1,0 +1,252 @@
+/* ========================================
+   RESET AND BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171717;
+    color: #fff;
+}
+
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+.navbar {
+    background-color: #000;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #6ac045;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6ac045;
+}
+
+.search-box {
+    background-color: #222;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid #444;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    color: #999;
+    outline: none;
+    width: 200px;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #1a1a1a, #171717);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #999;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 15px;
+}
+
+.important {
+    color: #6ac045;
+    font-weight: bold;
+}
+
+.social-links {
+    margin-top: 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+.social-links a {
+    color: #4a9eff;
+    text-decoration: none;
+}
+
+/* ========================================
+   SECTION HEADER
+   ======================================== */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: "⭐";
+}
+
+.more-link {
+    color: #4a9eff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ========================================
+   MOVIE GRID LAYOUT
+   ======================================== */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0 40px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   MOVIE CARD STYLING
+   ======================================== */
+.movie-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Hover effect - card lifts up with green glow */
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(106, 192, 69, 0.3);
+}
+
+/* Movie poster container */
+.movie-poster {
+    width: 100%;
+    height: 400px;
+    background-color: #2a2a2a;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Placeholder text for movie posters */
+.poster-placeholder {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Movie information section */
+.movie-info {
+    padding: 15px;
+    background-color: #1a1a1a;
+}
+
+.movie-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.movie-year {
+    color: #6ac045;
+    font-size: 14px;
+}
+
+/* ========================================
+   WARNING BANNER
+   ======================================== */
+.warning-banner {
+    background-color: #6ac045;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 40px 40px 0;
+    border-radius: 8px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Large tablets and small desktops - 3 columns */
+@media (max-width: 1200px) {
+    .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets - 2 columns */
+@media (max-width: 768px) {
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 20px 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Mobile phones - 1 column */
+@media (max-width: 480px) {
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
