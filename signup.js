@@ -1,6 +1,6 @@
 // Time to set up Firebase, like building a pillow fort
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDaqv5lilrSMnAZQzZSTdY_6PMUEQUtmWg",
@@ -23,7 +23,7 @@ signupForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('signup-password').value;
     try {
         // Firestore gets your email and password, and gives you a virtual high five
-        await setDoc(doc(db, "sign up", "VInMzJPASBi5ntdBUbv5"), {
+        await addDoc(collection(db, "sign up"), {
             email: email,
             password: password,
             createdAt: new Date().toISOString()
