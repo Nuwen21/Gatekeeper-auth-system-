@@ -23,7 +23,7 @@ signupForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('signup-password').value;
     try {
         // Firestore gets your email and password, and gives you a virtual high five
-        await addDoc(collection(db, "sign up"), {
+        await addDoc(collection(db, "Sign_up"), {
             email: email,
             password: password,
             createdAt: new Date().toISOString()
